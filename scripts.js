@@ -69,3 +69,16 @@
  
      // Insert the new job card at the beginning
      jobListings.insertBefore(newJobCard, jobListings.firstChild);
+
+
+      var newJobCard = document.createElement('div');
+     newJobCard.classList.add('job-card');
+     newJobCard.innerHTML = `
+         <h3>Process Executive - Data</h3>
+         <p>Company Name: Cognizant</p>
+         <p>Location: Hyderabad/Coimbatore, India</p>
+         <p>Experience: 1 to 2 years of experience</p>
+         <a href="Find<YourJobTodayAboutJobDetails.html"><button>View Details</button></a>
+     `;
+     var jobListings = document.querySelector('.job-listings');
+     jobListings.insertBefore(newJobCard, jobListings.firstChild);
