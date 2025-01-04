@@ -80,5 +80,28 @@
          <p>Experience: 1 to 2 years of experience</p>
          <a href="Find<YourJobTodayAboutJobDetails.html"><button>View Details</button></a>
      `;
-     var jobListings = document.querySelector('.job-listings-csit');
+     var jobListings = document.querySelector('.job-listings');
      jobListings.insertBefore(newJobCard, jobListings.firstChild);
+
+
+     document.addEventListener('DOMContentLoaded', () => {
+    // Create a new job card element
+    const newJobCard = document.createElement('div');
+    newJobCard.classList.add('job-card');
+
+    // Add content to the new job card
+    newJobCard.innerHTML = `
+        <h3>Bhaskar Developer</h3>
+        <p>Company Name: TechCorp</p>
+        <p>Location: Remote</p>
+        <p>Experience: 1+ years</p>
+        <a href="#"><button>View Details</button></a>
+    `;
+
+    // Select the job listings section
+    const jobListings = document.querySelector('.job-listings-csit');
+
+    // Insert the new job card at the beginning
+    jobListings.insertBefore(newJobCard, jobListings.firstChild);
+});
+
