@@ -82,3 +82,4 @@
      `;
      var jobListings = document.querySelectorAll('.job-listings,.job-listings-csit');
      jobListings.insertBefore(newJobCard, jobListings.firstChild);
+     jobListingscsit.insertBefore(newJobCard, jobListings.firstChild);
