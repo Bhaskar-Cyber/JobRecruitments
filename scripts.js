@@ -103,5 +103,5 @@
 
     // Insert the new job card at the beginning
     jobListings.insertBefore(newJobCard, jobListings.firstChild);
-});
+};
 
