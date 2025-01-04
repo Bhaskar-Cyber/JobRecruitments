@@ -84,7 +84,7 @@
      jobListings.insertBefore(newJobCard, jobListings.firstChild);
 
 
-     document.addEventListener('DOMContentLoaded', () => {
+    
     // Create a new job card element
     const newJobCard = document.createElement('div');
     newJobCard.classList.add('job-card');
@@ -103,5 +103,4 @@
 
     // Insert the new job card at the beginning
     jobListings.insertBefore(newJobCard, jobListings.firstChild);
-};
 
