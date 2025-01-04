@@ -80,6 +80,5 @@
          <p>Experience: 1 to 2 years of experience</p>
          <a href="Find<YourJobTodayAboutJobDetails.html"><button>View Details</button></a>
      `;
-     var jobListings = document.querySelectorAll('.job-listings,.job-listings-csit');
+     var jobListings = document.querySelector('.job-listings-csit');
      jobListings.insertBefore(newJobCard, jobListings.firstChild);
-     jobListingscsit.insertBefore(newJobCard, jobListings.firstChild);
