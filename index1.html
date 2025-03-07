@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Video Gallery with Single Control</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+
+    .video-container {
+      max-width: 1000px;
+      margin: 30px auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 20px;
+    }
+
+    .video-frame {
+      width: 100px;
+      height: 200px;
+      border: none;
+    }
+
+    .control-panel {
+      width: 100%;
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 15px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .play-button {
+      background-color: #ff0000;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .play-button:hover {
+      background-color: #cc0000;
+    }
+
+    h1 {
+      color: #333;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <h1>YouTube Video Gallery</h1>
+  
+  <div class="control-panel">
+    <button id="play-all-videos" class="play-button">Play All Videos</button>
+  </div>
+
+  <div class="video-container" id="video-gallery">
+    <!-- Videos will be dynamically added by JavaScript -->
+  </div>
+
+  <script>
+    // Video ID to be used for all iframes
+    const videoId = "GnGUQgUrDmk";
+    
+    // Number of videos to display
+    const videoCount = 50;
+    
+    // Reference to the video container
+    const videoGallery = document.getElementById("video-gallery");
+    
+    // Create the video iframes
+    for (let i = 0; i < videoCount; i++) {
+      // Create iframe with autoplay disabled initially
+      const iframe = document.createElement("iframe");
+      iframe.className = "video-frame";
+      iframe.src = `https://youtube.com/embed/5-Ze2Kr3z2A?si=WKDVRXME83X3C7kL&enablejsapi=1`;
+      iframe.title = "YouTube video player";
+      iframe.frameBorder = "0";
+      iframe.allow = "accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      iframe.allowFullscreen = true;
+      
+      // Add iframe to the container
+      videoGallery.appendChild(iframe);
+    }
+    
+    // Function to play all videos when the button is clicked
+    document.getElementById("play-all-videos").addEventListener("click", function() {
+      // Get all iframes
+      const iframes = document.querySelectorAll('.video-frame');
+      
+      // Play each video
+      iframes.forEach((iframe, index) => {
+        // Slight delay between starting each video to prevent overwhelming the browser
+        setTimeout(() => {
+          // Add autoplay parameter to the URL
+          const currentSrc = iframe.src;
+          iframe.src = currentSrc + "&autoplay=1";
+        }, index * 300); // 300ms delay between each video start
+      });
+    });
+  </script>
+</body>
+</html>
